@@ -7,6 +7,10 @@ describe('Home page tests', () => {
     const { getByText, history } = renderWithRouter(<App />);
     history.push('/');
 
-    expect(getByText(/choose the number of questions/i)).toBeInTheDocument();
+    const title = getByText(/choose the number of questions/i);
+    const QuantitySeletors = getByText(/choose the number of questions/i);
+
+    expect(title).toBeInTheDocument();
+    expect(QuantitySeletors).toBeInTheDocument();
   });
 });
