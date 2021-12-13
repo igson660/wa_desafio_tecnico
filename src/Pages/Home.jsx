@@ -1,10 +1,13 @@
 import React from 'react';
-import quantitySelectors from '../utils/index'
+import quantitySelectors from '../utils/index';
+import { Link } from 'react-router-dom';
+
 
 function Home() {
   const getQuantity = (value) => {
     localStorage.setItem('quanntityQuestions', JSON.stringify(value))
   }
+
   return (
     <>
       <header>
@@ -12,10 +15,14 @@ function Home() {
       </header>
       <main>
         { quantitySelectors.map((selector, index ) => (
-            <button
-            key={ index }
-              onClick={ ({ target }) => getQuantity(target.outerText)}
-            >{ selector }</button>
+            <Link to="/start">
+              <button
+                key={ index }
+                onClick={ ({ target }) => getQuantity(target.outerText)}
+                >
+                { selector }
+              </button>
+            </Link> 
           ))
         }
       </main>

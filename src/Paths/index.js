@@ -1,5 +1,6 @@
 const path = {
-  homePage: "/"
+  homePage: "/",
+  startCancelPage:"/start"
 }
 
 export default path;
