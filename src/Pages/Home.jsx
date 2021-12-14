@@ -1,29 +1,59 @@
-import React from 'react';
-import quantitySelectors from '../utils/index';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
+import { Formik, Form, Field } from 'formik';
+import * as yup from 'yup';
 
 
 function Home() {
-  const getQuantity = (value) => {
-    localStorage.setItem('quanntityQuestions', JSON.stringify(value))
+  const [load, setload ] =  useState(false)
+  const getQuantity = ({ quantityQuestions }) => {
+    localStorage.setItem('quantityQuestions', JSON.stringify(quantityQuestions))
+    setload(true)
   }
+
+  const schema = yup.object().shape({
+    quantityQuestions: yup.number().min(2).required(),
+  });
 
   return (
     <>
       <header>
-        <h1>choose the number of questions</h1>
+        <h1>Choose the number of questions</h1>
       </header>
       <main>
-        { quantitySelectors.map((selector, index ) => (
-            <Link to="/start">
-              <button
-                key={ index }
-                onClick={ ({ target }) => getQuantity(target.outerText)}
-                >
-                { selector }
-              </button>
-            </Link> 
-          ))
+        <Formik
+          onSubmit={ getQuantity }
+          validationSchema={ schema }
+          initialValues={{ quantityQuestions: '' }}
+        >
+          {
+            ({ errors }) => (
+              <Form>
+                <div>
+                  <label
+                    htmlFor="quantityQuestions"
+                  >
+                    Number of Questions: 
+                  </label>
+                  <Field
+                    id="quantityQuestions"
+                    name="quantityQuestions"
+                    type="number"
+                    placeHolder="Enter a Number"
+                  />
+                  {
+                    errors.quantityQuestions && (
+                      <span>Quantity Questions must be greater than or equal to 2</span>
+                    )
+                  }
+                </div>
+                  <button type="submit"> Next </button>
+              </Form>
+            )
+          }
+        </Formik>
+        {
+          load && ( <Redirect to="/start" /> )
         }
       </main>
     </>
