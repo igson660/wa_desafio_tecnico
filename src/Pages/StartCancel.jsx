@@ -1,14 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import getQuestions from '../services';
 
 
 function StartCancel() {
-  // const getQuantity = (value) => {
-  //   localStorage.setItem('quanntityQuestions', JSON.stringify(value))
-  // }
+  var getQuantity = localStorage.getItem('quantityQuestions');
+  
+  const test = async () => {
+    const test = await getQuestions(JSON.parse(getQuantity))
+    .then((test) => test);
+    console.log(test);
+  }
   return (
     <main>
-      <button>Start</button>
+      <button
+      onClick={test}>Start</button>
       <Link to="/">
         <button>Cancel</button>
       </Link>

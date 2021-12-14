@@ -5,11 +5,12 @@ import * as yup from 'yup';
 
 
 function Home() {
-  const [load, setload ] =  useState(false)
+  const [load, setload ] =  useState(false);
+
   const getQuantity = ({ quantityQuestions }) => {
     localStorage.setItem('quantityQuestions', JSON.stringify(quantityQuestions))
     setload(true)
-  }
+  };
 
   const schema = yup.object().shape({
     quantityQuestions: yup.number().min(2).required(),
@@ -30,11 +31,6 @@ function Home() {
             ({ errors }) => (
               <Form>
                 <div>
-                  <label
-                    htmlFor="quantityQuestions"
-                  >
-                    Number of Questions: 
-                  </label>
                   <Field
                     id="quantityQuestions"
                     name="quantityQuestions"
