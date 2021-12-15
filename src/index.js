@@ -4,11 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { GameContextProvider } from './cotext/GameContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <GameContextProvider>
+        <App />
+      </GameContextProvider>
     </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')

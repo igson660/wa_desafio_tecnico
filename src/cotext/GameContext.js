@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 export const GameContext = createContext();
 
-export function HeaderContextProvider({ children }) {
-  const [questions, setQuestions] = useState([]);
+export function GameContextProvider({ children }) {
+  const [questions, setQuestions] = useState();
 
   return (
     <GameContext.Provider
@@ -15,6 +15,6 @@ export function HeaderContextProvider({ children }) {
   );
 }
 
-HeaderContextProvider.propTypes = {
+GameContextProvider.propTypes = {
   children: PropTypes.node,
 }.isRequired;

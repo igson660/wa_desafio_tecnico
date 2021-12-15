@@ -1,21 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import getQuestions from '../services';
+import useGamer from '../hook/GameHook';
+import path from '../Paths';
 
 
 function StartCancel() {
-  var getQuantity = localStorage.getItem('quantityQuestions');
+  const { setQuestions } = useGamer();
   
-  const test = async () => {
-    const test = await getQuestions(JSON.parse(getQuantity))
-    .then((test) => test);
-    console.log(test);
+  const insertQuestions = async () => {
+    const getQuantity = localStorage.getItem('quantityQuestions');
+    await getQuestions(JSON.parse(getQuantity))
+    .then((questions) => setQuestions(questions));
   }
   return (
     <main>
-      <button
-      onClick={test}>Start</button>
-      <Link to="/">
+      <Link to={ path.gamePage  }>
+        <button
+          onClick={ insertQuestions }
+        >
+          Start
+        </button>
+      </Link>
+      <Link to={ path.homePage }>
         <button>Cancel</button>
       </Link>
     </main>

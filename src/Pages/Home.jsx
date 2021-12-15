@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
 import * as yup from 'yup';
+import path from '../Paths';
 
 
 function Home() {
@@ -35,7 +36,7 @@ function Home() {
                     id="quantityQuestions"
                     name="quantityQuestions"
                     type="number"
-                    placeHolder="Enter a Number"
+                    placeholder="Enter a Number"
                   />
                   {
                     errors.quantityQuestions && (
@@ -49,7 +50,7 @@ function Home() {
           }
         </Formik>
         {
-          load && ( <Redirect to="/start" /> )
+          load && ( <Redirect to={ path.startCancelPage } /> )
         }
       </main>
     </>
