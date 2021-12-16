@@ -1,7 +1,8 @@
 const path = {
   homePage: "/",
   startCancelPage: "/start",
-  gamePage: "/game"
+  gamePage: "/game",
+  checkoutPage: "/finish",
 }
 
 export default path;
