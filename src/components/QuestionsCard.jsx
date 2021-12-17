@@ -1,18 +1,45 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import shuffle from '../utils/index'
 
 function QuestionsCard({ alternative }) {
-  const { question, correct_answer, incorrect_answers  } = alternative;
+  const { question, correct_answer, incorrect_answers, difficulty } = alternative;
+  const answers = shuffle ([...incorrect_answers, correct_answer]);
+
+  const questionAnswer = ({ target }) => {
+    const answer = {
+      question,
+      selectAnswer: target.innerText,
+      difficulty,
+      correct_answer,
+    }
+
+    const getAnswersStorage = JSON.parse(localStorage.getItem('answers'));
+
+    getAnswersStorage ? (
+    localStorage.setItem('answers', JSON.stringify([...getAnswersStorage, answer ]))
+    ) : (
+    localStorage.setItem('answers', JSON.stringify([ answer ]))
+    )
+
+    target.classList.add('selected');
+  }
+
   return (
     <section>
       {
         alternative ? (
           <>
             <h2>{ question }</h2>
-            <button>{ correct_answer }</button>
             {
-              incorrect_answers.map((answer, index) => (
-                <button key={ index }>{ answer }</button>
+              answers.map((answer, index) => (
+                <button
+                  onClick={ questionAnswer }
+                  type="button"
+                  key={ index }
+                >
+                  { answer }
+                </button>
               ))
             }
           </>
@@ -29,3 +56,4 @@ QuestionsCard.propTypes = {
 };
 
 export default QuestionsCard;
+

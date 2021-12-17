@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useGamer from '../hook/GameHook';
+// import useGamer from '../hook/GameHook';
 import path from '../Paths';
 
 
 function CheckoutPage() {
-  const { questions } = useGamer();
+  // const { questions } = useGamer();
 
   return (
     <main>
