@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import shuffle from '../utils/index'
+import{ Container, Button } from '../styles/questionsCard';
+
 
 function QuestionsCard({ alternative }) {
   const { question, correct_answer, incorrect_answers, difficulty } = alternative;
@@ -26,26 +28,30 @@ function QuestionsCard({ alternative }) {
   }
 
   return (
-    <section>
-      {
-        alternative ? (
-          <>
+    <Container>
+      <section>
+        {
+          alternative ? (
+            <>
             <h2>{ question }</h2>
-            {
-              answers.map((answer, index) => (
-                <button
-                  onClick={ questionAnswer }
-                  type="button"
-                  key={ index }
-                >
-                  { answer }
-                </button>
-              ))
-            }
-          </>
-        ) : null
-      }
-    </section>
+            <div>
+                {
+                  answers.map((answer, index) => (
+                    <Button
+                    onClick={ questionAnswer }
+                    type="button"
+                    key={ index }
+                    >
+                      { answer }
+                    </Button>
+                  ))
+                }
+              </div>
+            </>
+          ) : null
+        }
+      </section>
+    </Container>
   );
 }
 

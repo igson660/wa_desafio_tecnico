@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import getQuestions from '../services';
 import useGamer from '../hook/GameHook';
 import path from '../Paths';
-import{ Container,Button } from '../styles/startCancel'
+import{ Container,Button } from '../styles/startCancel';
 
 
 function StartCancel() {
