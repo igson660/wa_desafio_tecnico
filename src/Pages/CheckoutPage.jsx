@@ -1,19 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import useGamer from '../hook/GameHook';
 import path from '../Paths';
+import{ Container, Button } from '../styles/checkoutPage';
 
 
 function CheckoutPage() {
-  // const { questions } = useGamer();
 
   return (
-    <main>
-      <h1>congratulations your grade is </h1>
-      <Link to={ path.homePage} >
-        <button>Restart</button>
-      </Link>
-    </main>
+    <Container>
+      <main>
+        <h1>Congratulations your grade is </h1>
+        <Link to={ path.homePage} >
+          <Button>Restart</Button>
+        </Link>
+      </main>
+    </Container>
   );
 }
 
