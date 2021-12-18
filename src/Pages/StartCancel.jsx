@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import getQuestions from '../services';
 import useGamer from '../hook/GameHook';
 import path from '../Paths';
+import{ Container,Button } from '../styles/startCancel'
 
 
 function StartCancel() {
@@ -21,16 +22,16 @@ function StartCancel() {
   }, [setQuestions]);
 
   return (
-    <main>
-      <Link to={ path.gamePage  }>
-        <button>
-          Start
-        </button>
-      </Link>
-      <Link to={ path.homePage }>
-        <button>Cancel</button>
-      </Link>
-    </main>
+    <Container>
+      <main>
+        <Link to={ path.gamePage  }>
+          <Button> Start </Button>
+        </Link>
+        <Link to={ path.homePage }>
+          <Button> Cancel </Button>
+        </Link>
+      </main>
+    </Container>
   );
 }
 
