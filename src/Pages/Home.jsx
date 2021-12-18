@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
 import * as yup from 'yup';
 import path from '../Paths';
+import { Button, Container } from '../styles/home';
 
 
 function Home() {
@@ -18,42 +19,44 @@ function Home() {
   });
 
   return (
-    <>
-      <header>
-        <h1>Choose the number of questions</h1>
-      </header>
-      <main>
-        <Formik
-          onSubmit={ getQuantity }
-          validationSchema={ schema }
-          initialValues={{ quantityQuestions: '' }}
-        >
+    <Container>
+      <div id="main-div">
+        <header>
+          <h1>Choose the number of questions</h1>
+        </header>
+        <main>
+          <Formik
+            onSubmit={ getQuantity }
+            validationSchema={ schema }
+            initialValues={{ quantityQuestions: '' }}
+            >
+            {
+              ({ errors }) => (
+                <Form>
+                  <div id="form-div">
+                    <Field
+                      id="quantityQuestions"
+                      name="quantityQuestions"
+                      type="number"
+                      placeholder="Enter a Number"
+                      />
+                    {
+                      errors.quantityQuestions && (
+                        <span>Quantity Questions must be greater than or equal to 2</span>
+                        )
+                      }
+                  </div>
+                  <Button type="submit">Next</ Button>
+                </Form>
+              )
+            }
+          </Formik>
           {
-            ({ errors }) => (
-              <Form>
-                <div>
-                  <Field
-                    id="quantityQuestions"
-                    name="quantityQuestions"
-                    type="number"
-                    placeholder="Enter a Number"
-                  />
-                  {
-                    errors.quantityQuestions && (
-                      <span>Quantity Questions must be greater than or equal to 2</span>
-                    )
-                  }
-                </div>
-                  <button type="submit"> Next </button>
-              </Form>
-            )
+            load && ( <Redirect to={ path.startCancelPage } /> )
           }
-        </Formik>
-        {
-          load && ( <Redirect to={ path.startCancelPage } /> )
-        }
-      </main>
-    </>
+        </main>
+      </div>
+    </Container>
   );
 }
 
