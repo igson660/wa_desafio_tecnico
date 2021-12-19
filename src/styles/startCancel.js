@@ -28,9 +28,5 @@ export const Container = styled.div`
     background-color: #FAF0E6;
     border: 3px solid #A020F0;
     padding: 20px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
   }
 `;

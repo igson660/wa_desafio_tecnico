@@ -47,15 +47,14 @@ function Checkout() {
     <Container>
       <main>
         <h1>{ `congratulations your score is: ${ note }` } </h1>
-        <Link to={ path.homePage} >
-          <Button
-            onClick={ restart }
-          >Restart</Button>
-        </Link>
-        <Link to={ path.rankinPage} >
-          <Button
-          >Ranking</Button>
-        </Link>
+        <div>
+          <Link to={ path.homePage} >
+            <Button onClick={ restart } > Restart </Button>
+          </Link>
+          <Link to={ path.rankinPage} >
+            <Button> Ranking </Button>
+          </Link>
+        </div>
       </main>
     </Container>
   );

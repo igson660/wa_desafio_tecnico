@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import path from '../Paths';
-import{ Container,Button } from '../styles/startCancel';
+import{ Container,Button } from '../styles/rankingPage';
 
 
 function Ranking() {

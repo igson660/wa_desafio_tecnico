@@ -6,7 +6,7 @@ export const Button = styled.button`
   border: 4px solid #6959CD;
   color: #6959CD;
   margin-top: 25px;
-  margin-left: 40%;
+  margin: 30px;
   padding: 0.25em 1em;
 
   ${props => props.primary && css`
@@ -35,11 +35,17 @@ export const Container = styled.div`
     align-content: center;
   }
 
-
   h1 {
     margin: 5px;
     color: #00008B;
     font-size: 20pt;
     letter-spacing: 3px;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
   }
 `;
