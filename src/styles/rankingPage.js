@@ -48,6 +48,7 @@ export const Container = styled.div`
 
   li {
     color: #6959CD;
+    margin: 5px;
     font-size: 17pt;
     letter-spacing: 3px;
   }

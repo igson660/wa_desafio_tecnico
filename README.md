@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+<div align="center" id="top"> 
+  &#xa0;
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1>Desafio Técnico  Wa</h1>
 
-## Available Scripts
+## :rocket: Technologies ##
 
-In the project directory, you can run:
+- [ReactJS](https://pt-br.reactjs.org/)
+- [Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+- [React-Router-Dom](https://reactrouter.com)
+- [CSS3](https://www.w3schools.com/css/)
+- [Formik](https://formik.org/docs/overview)
+- [Style-Components](https://styled-components.com/)
+- [Yup](https://www.npmjs.com/package/yup)
 
-### `yarn start`
+## :checkered_flag: Starting ##
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+# Clone this project
+$ git clone https://github.com/
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Access
+$ cd WA-GAMER
 
-### `yarn test`
+# Install dependencies
+$ yarn / npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Run the project
+$ yarn start / npm start
 
-### `yarn build`
+# The server will initialize in the <http://localhost:3000>
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+src/
+ |--- _test/        # Arquivos de testss
+ |--- components/   # Componentes
+ |--- pages/        # Páginas
+ |--- context/      # Arquivo contendo o estado global do App
+ |--- hook/         # Arquivo contendo  o acesso para escrita e leitura do estado global
+ |--- paths/        # Arquivo contendo o endereço das rotas do App
+ |--- services/     # Arquivo contendo as requisições feitas apara a API
+ |--- styles/       # Arquivo contendo a estilização do App
+ |--- utils/        # Arquivo contendo funções utilizadas em alguns locais do App
+ |--- App.js        # Arquivo com configurações principais do App
+ |--- index.js      # Ponto de entrada para execução do nosso App
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Logbook
 
-### `yarn eject`
+### Criando a aplicação com create-react-app
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+--> A criação de aplicações em React do zero, com as configurações do Webpack e do Babel e de todo o ambiente de desenvolvimento é bem interessante, pois deixa o ambiente customizável de acordo com as necessidades do seu projeto. Mas em alguns casos, o create-react-app facilita muito a vida por trazer boa parte dessas definições previamente configuradas. Portanto, utilizamos o seguinte comando para a criação da aplicação:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+$ yarn / npm create react-app  frontsiteongpaisafetivos
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Styled-components
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+--> A escolha do styled-components vem pela facilidade de customização de estilo através da criação de componentes estilizados utilizando javascript, é um recurso super interessante e poderoso, já que reduz o uso de classes e id's para determinação de estilos, problemas de acesso aos arquivos CSS e torna a legibilidade do código muito mais fácil de interpretar.
+--> Uma das vantagens da utilização do styled-components é que, assim como o sass, também permite o uso do encadeamento, ou seja, caso um elemento possua um outro elemento como filho, é possível realizar a estilização do mesmo dentro da estilização desse componente.
+--> Outra vantagem é a utilização da estilização limitada ao escopo em que o componente estilizado foi criado. Ele acaba gerando uma classe com uma chave única para que a estilização daquele componente não interfira no restante da aplicação.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Formik
+--> Formik mantém o controle do estado do formulário e, em seguida, expõe mais alguns métodos reutilizáveis e manipuladores de eventos ( handleChange, handleBlure handleSubmit) para o formulário via props. handleChangee handleBlurfuncionam exatamente como o esperado - eles usam um atributo name ou id para descobrir qual campo atualizar.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Yup
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+--> Yup é um construtor de esquema JavaScript para análise e validação de valor. Defina um esquema, transforme um valor para corresponder, valide a forma de um valor existente ou ambos. Os esquemas Yup são extremamente expressivos e permitem modelar validações complexas e interdependentes ou transformações de valor.
+--> A API do Yup é fortemente inspirada no Joi , mas é mais enxuta e construída com a validação do lado do cliente como seu caso de uso principal. Yup separa as funções de análise e validação em etapas separadas. cast()transforma os dados enquanto validateverifica se a entrada tem a forma correta. Cada um pode ser executado em conjunto (como validação de formulário HTML) ou separadamente (como desserializar dados confiáveis ​​de APIs).
