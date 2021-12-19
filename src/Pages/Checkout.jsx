@@ -4,7 +4,7 @@ import path from '../Paths';
 import{ Container, Button } from '../styles/checkoutPage';
 
 
-function CheckoutPage() {
+function Checkout() {
   const restart = () => {
     localStorage.removeItem('quantityQuestions');
     localStorage.removeItem('answers');
@@ -28,12 +28,20 @@ function CheckoutPage() {
           }
         }
       });
+
+      const getScoreStorage = JSON.parse(localStorage.getItem('score'));
+
+      getScoreStorage ? (
+      localStorage.setItem('score', JSON.stringify([...getScoreStorage, { note } ]))
+      ) : (
+        localStorage.setItem('score', JSON.stringify([ { note } ]))
+      )
   
       setNote(note)
     }
 
     insertNote();
-  }, [note]);
+  }, []);
 
   return (
     <Container>
@@ -44,9 +52,13 @@ function CheckoutPage() {
             onClick={ restart }
           >Restart</Button>
         </Link>
+        <Link to={ path.rankinPage} >
+          <Button
+          >Ranking</Button>
+        </Link>
       </main>
     </Container>
   );
 }
 
-export default CheckoutPage;
+export default Checkout;

@@ -3,7 +3,7 @@ import useGamer from '../hook/GameHook';
 import QuestionsCard from '../components/QuestionsCard';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import path from '../Paths';
-import{ Container,Button } from '../styles/game';
+import{ Container, Button } from '../styles/game';
 
 
 function Game() {
