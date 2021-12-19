@@ -4,6 +4,10 @@
 
 <h1>Desafio Técnico  Wa</h1>
 
+<p align="center">
+  <img width="460" height="300" src="src/assert/to_readme.gif">
+</p>
+
 ## :rocket: Technologies ##
 
 - [ReactJS](https://pt-br.reactjs.org/)
